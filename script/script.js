@@ -30,49 +30,26 @@ $("#hour-3p .description").val(localStorage.getItem("hour-3p"));
 $("#hour-4p .description").val(localStorage.getItem("hour-4p"));
 $("#hour-5p .description").val(localStorage.getItem("hour-5p"));
 
-// creating function to change colors on hours
-$(".timeBlocks").each(function () {
-  // grabbing html id for current hour
+// Function which changes the colors on past, present and future classes
+$(".time-block").each(function () {
+  // HTML id to get the row information
   const timeHr = $(this).attr("id");
   console.log(this);
-  // changing html from string to number to compare to moment.js
-  let times = parseInt($(this).attr("id"));
+  let times = parseInt($(this).children(".description").attr("id"));
   console.log(times);
   let momentHr = parseInt(moment().format("HH"));
   console.log(momentHr);
-  // asking if the number matches the current hour from moment.js
+  // Checking time aganist MomentJS to make sure it is past, present or future
+  console.log($(this).children(".description"));
   if (times < momentHr) {
     console.log(`${times} < ${momentHr}`);
-    // attaching its class to change colors
+    // Color change for classes
     $(this).children(".description").addClass("past");
-  } else if (times === momentHr) {
-    console.log(`${times} === ${momentHr}`);
+  } else if (times == momentHr) {
+    console.log(`${times} == ${momentHr}`);
     $(this).children(".description").addClass("present");
   } else if (times > momentHr) {
     console.log(`${times} > ${momentHr}`);
     $(this).children(".description").addClass("future");
   }
 });
-
-//
-//Function to display reminder
-// function displayReminder() {
-//   var displayText = JSON.parse(localStorage.getItem(userText));
-//   if (displayText !== null) {
-//     userText = displayText;
-//   }
-//   displayReminder();
-//   console.log(userText);
-// }
-
-// function saveData() {
-//   const text = $(this).siblings("textarea");
-//   hour = task.attr("id");
-//   localStorage.setItem(hour, text.val());
-//   alert("Saved to local storage.");
-// }
-
-//   localStorage.setItem(time, text); // End user text value placed into local storage
-// });
-
-//Add CSS classes to the background of textarea
