@@ -3,7 +3,7 @@
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. 
 The app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-LINK TO PROJECT: https://maximosandoval.github.io/day-planner/
+LINK TO PROJECT: https://maximosandoval.github.io/workday-planner/
 
 ## Getting Started
 
